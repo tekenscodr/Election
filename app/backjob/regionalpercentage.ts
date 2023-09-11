@@ -10,4 +10,3 @@ export default async function regionalpercentage ()  {
     throw new Error(`Failed: ${error}`)
   }
 }
-

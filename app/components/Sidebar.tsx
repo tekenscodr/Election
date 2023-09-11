@@ -1,5 +1,6 @@
+'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { RxDashboard, RxPerson, RxSketchLogo } from 'react-icons/rx'
 import {HiOutlineShoppingBag} from 'react-icons/hi'
@@ -21,7 +22,7 @@ const Sidebar = ({ children }: {
                 <Link href="/dashboard/national/users">
                 <div className='bg-gray-100 hover:bg-gray-200 cursor-pointer my-4 p-3 rounded-lg inline-block'>
                     <RxDashboard size={20 } />
-                </div>
+                </div> 
                 </Link>
                 <span className='border-b-[1px] border-gray-200 w-full p-2 '></span>
                 <Link href="/agents">
@@ -50,4 +51,4 @@ const Sidebar = ({ children }: {
   )
 }
 
-export default Sidebar
+export default Sidebar;
