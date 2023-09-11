@@ -37,7 +37,7 @@
     "@types/crypto-js": "^4.1.1",
     "@types/http-errors": "^2.0.1",
     "@types/jsonwebtoken": "^9.0.2",
-    "eslint": "^7.32.0",
+    "eslint": "^7.23.0",
     "eslint-config-next": "^13.4.19",
     "nodemon": "^3.0.1"
   }
