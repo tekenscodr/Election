@@ -66,6 +66,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }>= ({ children 
 
   const login = async (phoneNumber: string, password: string) => {
     try {
+      console.log({ phoneNumber, password })
       const response = await fetch('http://localhost:2024/auth/login', {
         method: 'POST',
         headers: {
