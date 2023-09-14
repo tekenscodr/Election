@@ -63,11 +63,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }>= ({ children 
     fetchUser();
   }, []);
 
-
   const login = async (phoneNumber: string, password: string) => {
     try {
       // console.log({ phoneNumber, password })
-      const response = await fetch('http://localhost:2024/auth/login', {
+      const response = await fetch('https://colbak.vercel.app/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
