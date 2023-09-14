@@ -18,7 +18,7 @@ const NationalCard = () => {
     }
     fetchPercentages();
     // Optionally, you can use a setTimeout to fetch data periodically
-    const fetchInterval = setInterval(fetchPercentages, 1000); // 10 seconds
+    const fetchInterval = setInterval(fetchPercentages, 100000); // 1000 seconds
     // Cleanup the interval when the component unmounts
     return () => clearInterval(fetchInterval);
     // console.log(fetchInterval)

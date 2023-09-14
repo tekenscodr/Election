@@ -25,7 +25,7 @@ const Recent = () => {
         }
         fetchConstituency();
         // Optionally, you can use a setTimeout to fetch data periodically
-        const fetchInterval = setInterval(fetchConstituency, 1000); // 10 seconds
+        const fetchInterval = setInterval(fetchConstituency, 100000); // 1000 seconds
         // Cleanup the interval when the component unmounts
         return () => clearInterval(fetchInterval);
         // console.log(fetchInterval)
