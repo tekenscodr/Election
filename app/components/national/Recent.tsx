@@ -25,7 +25,7 @@ const Recent = () => {
         }
         fetchConstituency();
         // Optionally, you can use a setTimeout to fetch data periodically
-        const fetchInterval = setInterval(fetchConstituency, 100000); // 1000 seconds
+        const fetchInterval = setInterval(fetchConstituency, 10000); // 100 seconds
         // Cleanup the interval when the component unmounts
         return () => clearInterval(fetchInterval);
         // console.log(fetchInterval)
@@ -34,6 +34,7 @@ const Recent = () => {
    <>
     <Suspense fallback={<div>Loading percentages...</div>}>  
      <h1 className='p-2 text-black text-lg text-justify font-bold'>Recent Uploads</h1> 
+     {!constituencyVotes &&<p>No Votes Yet</p>}
     <ul>
     {constituencyVotes.map((constituency) =>(
       <li key={constituency._id} className='bg-grey-50 hover:bg-grey-100 rounded-lg my-3 p-2 flex items-center cursor-pointer'>
