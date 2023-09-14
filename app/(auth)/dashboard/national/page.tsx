@@ -4,6 +4,7 @@ import { Header } from '@/app/components/Header';
 import TopCards from '@/app/components/TopCards';
 import Tile from '@/app/components/image';
 import NationalCard from '@/app/components/national/NationalCard';
+import Recent from '@/app/components/national/Recent';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react'
 import { RxSpeakerModerate } from 'react-icons/rx';
@@ -41,17 +42,7 @@ return (
   </div>
  
   <div className='m-5 w-1/2'>
-    <h1 className='p-2 text-black text-lg text-justify font-bold'>Recent Uploads</h1>
-    <ul>
-      <li className='bg-grey-50 hover:bg-grey-100 rounded-lg my-3 p-2 flex items-center cursor-pointer'>
-        <div className='bg-blue-200'> 
-        <RxSpeakerModerate className='text-blue-800 '/> </div>
-        <div className='pl-4'>
-          <p className='text-black font-bold'>Constituency Name</p>
-          <p className='text-gray-700'>just now</p>
-        </div>
-      </li>
-    </ul>
+    <Recent/>
   </div>
   </div>
   </div>

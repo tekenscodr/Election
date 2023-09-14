@@ -1,5 +1,5 @@
 // components/ProgressBar.tsx
-import {getPercentage} from '@/app/backjob/percentage';
+import {getPercentage} from '@/app/backjob/backend';
 import React, { useEffect, useState } from 'react';
 
 type ProgressBarProps = {

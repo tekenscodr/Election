@@ -38,7 +38,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }>= ({ children 
         const storedToken = sessionStorage.getItem('token');
         if (storedToken) {
           // Make an API request to validate the token and fetch user data
-          const response = await fetch('http://localhost:2024/auth/verify', {
+          const response = await fetch('https://colbak.vercel.app/auth/verify', {
             method: "POST",
             headers: { Authorization: `Bearer ${storedToken}` },
           });
@@ -66,7 +66,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }>= ({ children 
 
   const login = async (phoneNumber: string, password: string) => {
     try {
-      console.log({ phoneNumber, password })
+      // console.log({ phoneNumber, password })
       const response = await fetch('http://localhost:2024/auth/login', {
         method: 'POST',
         headers: {
@@ -80,7 +80,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }>= ({ children 
         // Store the token in session storage
         sessionStorage.setItem('token', token);
         setUser(data);
-        // console.log(user);
+        console.log(user);
         router.push('/dashboard');
       } else {
         console.error('Login failed');

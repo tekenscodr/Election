@@ -1,6 +1,6 @@
 import React, { Suspense, useEffect, useState } from 'react'
 import RegProgressBar from './ProgressBar'
-import { nationalPercentage, getPercentage} from "@/app/backjob/percentage";
+import { nationalPercentage, getPercentage} from "@/app/backjob/backend";
 
 const NationalCard = () => {
 
@@ -16,12 +16,9 @@ const NationalCard = () => {
         console.error('Error fetching percentages:', error);
       }
     }
-
     fetchPercentages();
-
     // Optionally, you can use a setTimeout to fetch data periodically
     const fetchInterval = setInterval(fetchPercentages, 1000); // 10 seconds
-
     // Cleanup the interval when the component unmounts
     return () => clearInterval(fetchInterval);
     // console.log(fetchInterval)

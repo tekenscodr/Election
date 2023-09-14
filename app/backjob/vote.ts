@@ -1,7 +1,7 @@
 
 export default async function getData() {
     
-        const res = await fetch('http://localhost:2024/auth/votes', {
+        const res = await fetch('https://colbak.vercel.app/auth/votes', {
             next:{
               revalidate: 10
           }})

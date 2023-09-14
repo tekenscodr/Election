@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 
 const Dashboard = () => {
   const { user, loading, } = useAuth();
-  console.log(user?.token)
+  // console.log(user?.token)
   const router = useRouter();
   // const role = sessionStorage.getItem('role');
   // const token = sessionStorage.getItem('token');

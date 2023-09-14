@@ -1,4 +1,4 @@
-import { nationalPercentage } from "@/app/backjob/percentage";
+import { nationalPercentage } from "@/app/backjob/backend";
 import regionalpercentage from '@/app/backjob/regionalpercentage';
 import React, { useEffect, useState, Suspense } from 'react';
 

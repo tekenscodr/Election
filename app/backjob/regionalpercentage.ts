@@ -1,7 +1,7 @@
 
 export default async function regionalpercentage ()  {
   try {
-    const res = await fetch("http://localhost:2024/auth/percentage")
+    const res = await fetch("https://colbak.vercel.app/auth/percentage")
     if (!res.ok){
         throw new Error('No votes loaded')
     }
