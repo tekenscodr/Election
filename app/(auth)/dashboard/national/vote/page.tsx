@@ -42,7 +42,9 @@ const Votes: React.FC = () => {
   return (
     <>
      {constituencyVotes.length === 0 ? (
-          <p className='mt-4 justify-center'>No Votes Yet</p>
+      <div className="flex flex-col items-center justify-center h-[85vh] w-full" >
+          <p className='mt-4 justify-center '>No Votes Yet</p>
+      </div>
         ) : (
       <div className='bg-white h-screen w-full'>
         <table className="table-auto w-full text-sm text-left text-gray-500 dark:text-gray-400">
