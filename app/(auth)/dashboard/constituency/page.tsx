@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 import { useAuth } from "@/app/backjob/authmiddleware";
 import { Header } from "@/app/components/Header";
 import { useRouter } from "next/navigation";
@@ -96,6 +96,7 @@ const Constituency = () => {
           {defaultFormValues.votes.map((vote , index: any) => (
             <div key={index} className="flex p-5 justify-between">
               <img src={`/${vote.name}.jpg`} alt="candidate" className="w-12 h-12 rounded-full" />
+              
               <label>{vote.name}</label>
               <Controller
                  name={`votes[${index}].count` as unknown as `votes.${number}.count`}
