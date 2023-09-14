@@ -16,10 +16,10 @@ type Votes = z.infer<typeof DataSchema>;
 const Constituency = () => {
   const router = useRouter();
   const { user, loading } = useAuth();
-  const userid = user!._id;
+  const userid = user?._id;
   // console.log(user)
   const defaultFormValues: Votes = {
-    agent: userid,
+    agent: userid!,
     votes: [
       {
         name: "Mahamud Bawumia",
