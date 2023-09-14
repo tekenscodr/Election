@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useState } from 'react'
 import RegProgressBar from './ProgressBar'
 import { nationalPercentage, getPercentage} from "@/app/backjob/backend";
 
-const NationalCard = () => {
+const   NationalCard = () => {
 
   type PercentagesState = { [key: string]: number };
   const [percentages, setPercentages] = useState<PercentagesState>({});
@@ -29,9 +29,12 @@ const NationalCard = () => {
   return (
     <>
     <Suspense fallback={<div>Loading percentages...</div>}>
+    {Object.entries(percentages).length === 0 ? (
+          <p className='mt-4'>No Votes Yet</p>
+        ) : (
+      <div>
       {Object.entries(percentages).map(([label, value]) => {
         let color = '';
-
         if (value >= 0 && value < 15) {
           color = 'bg-red-500';
         } else if (value >= 16 && value < 20) {
@@ -41,7 +44,6 @@ const NationalCard = () => {
         } else {
           color = 'bg-green-400';
         }
-
         return (
           <div key={label} className="mb-4 ">
           <div className="flex col-span-1 items-center justify-between mb-1">
@@ -54,6 +56,8 @@ const NationalCard = () => {
         </div>
         );
       })}
+      </div>
+        )}      
           </Suspense>
           </>
   )
