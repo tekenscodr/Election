@@ -40,7 +40,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, onFormSubmit, children }) 
     // TODO: post to server
      console.log(data)
     // await new Promise((resolve) => setTimeout(resolve, 2000))
-    const res = await fetch ('http://localhost:2024/auth/register', {
+    const res = await fetch ('https://colbak.vercel.app/auth/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

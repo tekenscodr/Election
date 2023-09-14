@@ -131,7 +131,7 @@ export const useAuth = (): AuthContextType => {
 
 //   useEffect(() => {
 //     const fetxhUser = async () => {
-//       const response = await fetch('http://localhost:2024/auth/login', 
+//       const response = await fetch('https://colbak.vercel.app/auth/login', 
 //     {
 //       method: 'POST',
 //       headers: {

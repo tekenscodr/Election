@@ -55,7 +55,7 @@ const Constituency = () => {
 
   const onSubmit = async (data:Votes) => {
     try {
-      const response = await fetch('http://localhost:2024/auth/add-votes', {
+      const response = await fetch('https://colbak.vercel.app/auth/add-votes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

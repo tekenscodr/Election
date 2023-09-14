@@ -14,7 +14,7 @@ export default function Register() {
     const handleFormSubmit = async (e: any) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:2024/auth/register', {
+            const response = await fetch('https://colbak.vercel.app/auth/register', {
                 method: 'POST',
                 body: JSON.stringify({
                     email,
