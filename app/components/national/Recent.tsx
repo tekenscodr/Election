@@ -34,7 +34,7 @@ const Recent = () => {
    <>
     <Suspense fallback={<div>Loading percentages...</div>}>  
      <h1 className='p-2 text-black text-lg text-justify font-bold'>Recent Uploads</h1> 
-     {!constituencyVotes &&<p>No Votes Yet</p>}
+     {!constituencyVotes &&<p className='mt4'>No Votes Yet</p>}
     <ul>
     {constituencyVotes.map((constituency) =>(
       <li key={constituency._id} className='bg-grey-50 hover:bg-grey-100 rounded-lg my-3 p-2 flex items-center cursor-pointer'>
