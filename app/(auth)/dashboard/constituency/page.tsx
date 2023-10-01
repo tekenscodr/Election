@@ -1,3 +1,4 @@
+'use client'
 import { useAuth } from "@/app/backjob/authmiddleware";
 import { Header } from "@/app/components/Header";
 import { useRouter } from "next/router";
