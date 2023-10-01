@@ -78,7 +78,7 @@ const Constituency = () => {
   };
 
   return (
-    <div className='bg-white py-5 min-h-screen w-full'>
+    <div className='bg-white p-5 min-h-screen w-full'>
       <Header />
       <div className="flex justify-end">
         <button
