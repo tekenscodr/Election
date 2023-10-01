@@ -105,7 +105,7 @@ const Constituency = () => {
                   <input
                     {...field}
                     type='number'
-                    className="border-b border-gray-500 focus:border-indigo-500 focus:outline-none p-3 m-2"
+                    className="border-b focus:border-indigo-500 focus:outline-none p-3 m-2"
                   />
                 )}
               />
@@ -114,7 +114,7 @@ const Constituency = () => {
           <div className="flex p-5 justify-between">
             <label>Upload Results Photo</label>
           <input type="file" 
-                className="border-b border-gray-500 focus:border-indigo-500 focus:outline-none"/>
+                className="border-b focus:border-indigo-500 focus:outline-none"/>
           </div>
           <div className="flex justify-end m-5 p-5">
             <button className="bg-blue-500 rounded py-3 px-5 text-zinc-200 hover:bg-sky-700">
