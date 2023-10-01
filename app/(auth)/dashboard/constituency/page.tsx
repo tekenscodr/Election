@@ -1,9 +1,8 @@
 import { useAuth } from "@/app/backjob/authmiddleware";
 import { Header } from "@/app/components/Header";
-import { useRouter } from "next/router"; // Change "next/navigation" to "next/router"
-import { useEffect } from "react"; // Removed unnecessary "useState" import
+import { useRouter } from "next/router";
 import Image from 'next/image';
-import { useForm, Controller, SubmitHandler } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
 import { DataSchema } from "@/app/backjob/schema";
 
@@ -39,16 +38,6 @@ const Constituency = () => {
     defaultValues: defaultFormValues,
   });
 
-  if (loading) {
-    return (
-      <div className='w-full h-screen flex items-center justify-center'>
-        <p>Loading...</p>
-      </div>
-    );
-  } else if (!loading && !user) {
-    router.replace('/');
-  }
-
   const onSubmit = async (data: Votes) => {
     try {
       const response = await fetch('https://colbak.vercel.app/auth/add-votes', {
@@ -60,7 +49,6 @@ const Constituency = () => {
       });
 
       if (response.ok) {
-        // Reset the form on success
         reset();
         alert('Data submitted successfully');
       } else {
@@ -89,8 +77,10 @@ const Constituency = () => {
       <div className="m-5 bg-white">
         <form onSubmit={handleSubmit(onSubmit)}>
           {defaultFormValues.votes.map((vote , index: any) => (
-            <div key={index} className="flex justify-between">
-              <Image src={`/${vote.name}.jpg`} alt="candidate" className="w-12 h-12 rounded-full" />
+            <div key={index} className="flex flex-col md:flex-row items-center md:items-start justify-between">
+              <div className="md:mr-4">
+                <Image src={`/${vote.name}.jpg`} alt="candidate" className="w-12 h-12 rounded-full" />
+              </div>
               <label className="p-2 m-2">{vote.name}</label>
               <Controller
                 name={`votes[${index}].count` as unknown as `votes.${number}.count`}
@@ -105,14 +95,14 @@ const Constituency = () => {
               />
             </div>
           ))}
-          <div className="flex p-5 justify-between">
-            <label>Upload Results Photo</label>
+          <div className="flex flex-col md:flex-row p-5 justify-between">
+            <label className="mb-2 md:mb-0">Upload Results Photo</label>
             <input
               type="file"
               className="border-b focus:border-indigo-500 focus:outline-none"
             />
           </div>
-          <div className="flex justify-end m-5 p-5">
+          <div className="flex justify-center md:justify-end m-5 p-5">
             <button className="bg-blue-500 rounded py-3 px-5 text-zinc-200 hover:bg-sky-700">
               Submit
             </button>
