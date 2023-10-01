@@ -91,7 +91,7 @@ const Constituency = () => {
         </button>
       </div>
       <h3 className="uppercase subpixel-antialiased font-bold text-xl text-center m-4"> Collation Sheet </h3>
-      {/* <div className="m-5 bg-white">
+      <div className="m-5 bg-white">
         <form onSubmit={handleSubmit(onSubmit)}>
           {defaultFormValues.votes.map((vote , index: any) => (
             <div key={index} className="flex p-5 justify-between">
@@ -122,7 +122,7 @@ const Constituency = () => {
             </button>
           </div>
         </form>
-      </div> */}
+      </div>
     </div>
   );
 };
