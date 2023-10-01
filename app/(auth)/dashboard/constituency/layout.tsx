@@ -9,7 +9,7 @@ export default function layout({
   children: React.ReactNode
 }) {
   return (
-    <main>
+    <main className='bg-white'>
       {children}
   </main>
     
