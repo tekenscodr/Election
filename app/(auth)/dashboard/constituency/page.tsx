@@ -89,7 +89,7 @@ const Constituency = () => {
                   <input
                     {...field}
                     type='number'
-                    className="border-b w-0.5 bg-white focus:border-indigo-500 focus:outline-none p-3 m-2"
+                    className="border-b min-w-fit bg-white focus:border-indigo-500 focus:outline-none p-3 m-2"
                   />
                 )}
               />
