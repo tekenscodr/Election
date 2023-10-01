@@ -99,7 +99,7 @@ const Constituency = () => {
             <label className="mb-2 md:mb-0">Upload Results Photo</label>
             <input
               type="file"
-              className="border-b focus:border-indigo-500 focus:outline-none"
+              className="border-b w-pxfocus:border-indigo-500 focus:outline-none"
             />
           </div>
           <div className="flex justify-center md:justify-end m-5 p-5">
