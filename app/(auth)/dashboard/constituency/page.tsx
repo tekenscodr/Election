@@ -62,7 +62,7 @@ const Constituency = () => {
   };
 
   return (
-    <div className='bg-white min-h-screen'>
+    <div className='bg-white min-h-screen w-full'>
       <Header />
       <div className="flex justify-end">
         <button
@@ -78,11 +78,9 @@ const Constituency = () => {
       <div className="p-5 bg-white">
         <form onSubmit={handleSubmit(onSubmit)}>
           {defaultFormValues.votes.map((vote , index: any) => (
-            <div key={index} className="flex flex-col md:flex-row items-center md:items-start ">
-              <div className="md:mr-4">
-                <Image src={`/${vote.name}.jpg`} alt="candidate" width={3} height={3} className="w-12 h-12 rounded-full" />
-              </div>
-              <label className="p-2 m-2">{vote.name}</label>
+            <div key={index} className="flex p-1">
+            <img src={`/${vote.name}.jpg`} alt="candidate" className="w-12 h-12 rounded-full" />
+            <label className="p-2 m-2">{vote.name}</label>
               <Controller
                 name={`votes[${index}].count` as unknown as `votes.${number}.count`}
                 control={control}
@@ -90,17 +88,17 @@ const Constituency = () => {
                   <input
                     {...field}
                     type='number'
-                    className="border-b min-w-fit bg-white focus:border-indigo-500 focus:outline-none p-3 m-2"
+                    className="border-b w-16 bg-white focus:border-indigo-500 focus:outline-none p-2 "
                   />
                 )}
               />
             </div>
           ))}
           <div className="flex flex-col md:flex-row p-5 justify-between">
-            <label className="mb-2 md:mb-0">Upload Results Photo</label>
+            <label className="mb-2 md:mb-4">Upload Results Photo</label>
             <input
               type="file"
-              className="border-b w-px focus:border-indigo-500 focus:outline-none"
+              className="border-b w-80 focus:border-indigo-500 focus:outline-none"
             />
           </div>
           <div className="flex justify-center md:justify-end m-5 p-5">

@@ -22,6 +22,7 @@ interface User {
   phoneNumber: string;
   email: string;
   status: string;
+  
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
