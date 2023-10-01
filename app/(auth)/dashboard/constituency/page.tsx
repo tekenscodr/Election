@@ -77,7 +77,7 @@ const Constituency = () => {
       <div className="m-5 bg-white">
         <form onSubmit={handleSubmit(onSubmit)}>
           {defaultFormValues.votes.map((vote , index: any) => (
-            <div key={index} className="flex flex-col md:flex-row items-center md:items-start justify-between">
+            <div key={index} className="flex flex-col md:flex-row items-center md:items-start ">
               <div className="md:mr-4">
                 <Image src={`/${vote.name}.jpg`} alt="candidate" className="w-12 h-12 rounded-full" />
               </div>
