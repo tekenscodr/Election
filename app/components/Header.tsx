@@ -25,7 +25,7 @@ export const Header = () => {
   };
 
   return (
-    <div className='flex justify-between px-4 pt-4'>
+    <div className='flex bg-white justify-between px-4 pt-4'>
         <h2>Dashboard</h2>
         <div  className='cursor-pointer' onClick={handleClick}>
         <h2 >Welcome Back, {user?.firstname}</h2>
