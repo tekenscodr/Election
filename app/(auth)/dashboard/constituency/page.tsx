@@ -1,7 +1,7 @@
 'use client'
 import { useAuth } from "@/app/backjob/authmiddleware";
 import { Header } from "@/app/components/Header";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Image from 'next/image';
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
@@ -80,7 +80,7 @@ const Constituency = () => {
           {defaultFormValues.votes.map((vote , index: any) => (
             <div key={index} className="flex flex-col md:flex-row items-center md:items-start ">
               <div className="md:mr-4">
-                <Image src={`/${vote.name}.jpg`} alt="candidate" className="w-12 h-12 rounded-full" />
+                <Image src={`/${vote.name}.jpg`} alt="candidate" width={3} height={3} className="w-12 h-12 rounded-full" />
               </div>
               <label className="p-2 m-2">{vote.name}</label>
               <Controller
