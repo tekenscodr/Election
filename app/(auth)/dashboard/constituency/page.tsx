@@ -89,7 +89,7 @@ const Constituency = () => {
         >
           Report
         </button>
-      </div> */}
+      </div>
       <h3 className="uppercase subpixel-antialiased font-bold text-xl text-center m-4"> Collation Sheet </h3>
       <div className="m-5">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -122,7 +122,7 @@ const Constituency = () => {
             </button>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 };
