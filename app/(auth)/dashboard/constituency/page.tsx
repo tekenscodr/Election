@@ -105,7 +105,7 @@ const Constituency = () => {
                   <input
                     {...field}
                     type='number'
-                    className="border-b border-gray-500 focus:border-indigo-500 focus:outline-none p-3 m-4"
+                    className="border-b border-gray-500 focus:border-indigo-500 focus:outline-none p-3 m-2"
                   />
                 )}
               />
