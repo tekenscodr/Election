@@ -1,23 +1,19 @@
-"use client"
 import { useAuth } from "@/app/backjob/authmiddleware";
 import { Header } from "@/app/components/Header";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/router"; // Change "next/navigation" to "next/router"
+import { useEffect } from "react"; // Removed unnecessary "useState" import
 import Image from 'next/image';
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { DataSchema } from "@/app/backjob/schema";
 
-
 type Votes = z.infer<typeof DataSchema>;
-// const agent = session;
-
 
 const Constituency = () => {
   const router = useRouter();
   const { user, loading } = useAuth();
   const userid = user?._id;
-  // console.log(user)
+
   const defaultFormValues: Votes = {
     agent: userid!,
     votes: [
@@ -43,17 +39,17 @@ const Constituency = () => {
     defaultValues: defaultFormValues,
   });
 
-  if(loading){
+  if (loading) {
     return (
-      <div className='w-full h-screen'>
+      <div className='w-full h-screen flex items-center justify-center'>
         <p>Loading...</p>
       </div>
-    )
-  }else if (!loading&& !user){
-    router.replace('/')
+    );
+  } else if (!loading && !user) {
+    router.replace('/');
   }
 
-  const onSubmit = async (data:Votes) => {
+  const onSubmit = async (data: Votes) => {
     try {
       const response = await fetch('https://colbak.vercel.app/auth/add-votes', {
         method: 'POST',
@@ -70,7 +66,6 @@ const Constituency = () => {
       } else {
         alert('Data submission failed');
       }
-      // console.log(data)
     } catch (error) {
       console.error('Error submitting data:', error);
       alert('An error occurred while submitting data');
@@ -78,7 +73,7 @@ const Constituency = () => {
   };
 
   return (
-    <div className='bg-white p-5 min-h-screen w-full'>
+    <div className='bg-white min-h-screen'>
       <Header />
       <div className="flex justify-end">
         <button
@@ -96,10 +91,9 @@ const Constituency = () => {
           {defaultFormValues.votes.map((vote , index: any) => (
             <div key={index} className="flex justify-between">
               <Image src={`/${vote.name}.jpg`} alt="candidate" className="w-12 h-12 rounded-full" />
-              
               <label className="p-2 m-2">{vote.name}</label>
               <Controller
-                 name={`votes[${index}].count` as unknown as `votes.${number}.count`}
+                name={`votes[${index}].count` as unknown as `votes.${number}.count`}
                 control={control}
                 render={({ field }) => (
                   <input
@@ -113,8 +107,10 @@ const Constituency = () => {
           ))}
           <div className="flex p-5 justify-between">
             <label>Upload Results Photo</label>
-          <input type="file" 
-                className="border-b focus:border-indigo-500 focus:outline-none"/>
+            <input
+              type="file"
+              className="border-b focus:border-indigo-500 focus:outline-none"
+            />
           </div>
           <div className="flex justify-end m-5 p-5">
             <button className="bg-blue-500 rounded py-3 px-5 text-zinc-200 hover:bg-sky-700">
