@@ -2,7 +2,7 @@
 import { useAuth } from "@/app/backjob/authmiddleware";
 import { Header } from "@/app/components/Header";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from 'next/image';
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
@@ -95,7 +95,7 @@ const Constituency = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           {defaultFormValues.votes.map((vote , index: any) => (
             <div key={index} className="flex p-5 justify-between">
-              <img src={`/${vote.name}.jpg`} alt="candidate" className="w-12 h-12 rounded-full" />
+              <Image src={`/${vote.name}.jpg`} alt="candidate" className="w-12 h-12 rounded-full" />
               
               <label>{vote.name}</label>
               <Controller
@@ -111,6 +111,11 @@ const Constituency = () => {
               />
             </div>
           ))}
+          <div className="flex p-5 justify-between">
+            <label>Upload Results Photo</label>
+          <input type="file" 
+                className="border-b border-gray-500 focus:border-indigo-500 focus:outline-none"/>
+          </div>
           <div className="flex justify-end m-5 p-5">
             <button className="bg-blue-500 rounded py-3 px-5 text-zinc-200 hover:bg-sky-700">
               Submit

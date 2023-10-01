@@ -16,11 +16,10 @@ import { useAuth } from '@/app/backjob/authmiddleware';
     
     const handleSignIn = async (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-
       try {
        await login(phoneNumber, password);
       } catch (error) {
-        setError('Login failed. Please check your credentials.');
+        setError(`Login failed. ${error}`);
       }
     };
     return (
