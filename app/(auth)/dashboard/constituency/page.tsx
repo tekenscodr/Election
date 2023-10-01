@@ -80,7 +80,7 @@ const Constituency = () => {
   return (
     <div className='bg-white py-5 min-h-screen w-full'>
       <Header />
-      {/* <div className="flex justify-end">
+      <div className="flex justify-end">
         <button
           className="border-2 m-4 px-3 rounded border-black hover:bg-gray-900 hover:text-zinc-100 focus:ring focus:ring-gray-300"
           onClick={() => {
@@ -91,7 +91,7 @@ const Constituency = () => {
         </button>
       </div>
       <h3 className="uppercase subpixel-antialiased font-bold text-xl text-center m-4"> Collation Sheet </h3>
-      <div className="m-5">
+      {/* <div className="m-5 bg-white">
         <form onSubmit={handleSubmit(onSubmit)}>
           {defaultFormValues.votes.map((vote , index: any) => (
             <div key={index} className="flex p-5 justify-between">
