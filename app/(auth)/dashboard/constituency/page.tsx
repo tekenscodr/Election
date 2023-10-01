@@ -97,7 +97,7 @@ const Constituency = () => {
             <div key={index} className="flex p-5 justify-between">
               <Image src={`/${vote.name}.jpg`} alt="candidate" className="w-12 h-12 rounded-full" />
               
-              <label>{vote.name}</label>
+              <label className="p-2 m-2">{vote.name}</label>
               <Controller
                  name={`votes[${index}].count` as unknown as `votes.${number}.count`}
                 control={control}
