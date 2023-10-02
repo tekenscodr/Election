@@ -34,6 +34,7 @@ const Constituency = () => {
         count: 0,
       },
     ],
+    image: '',
   };
   const { register, handleSubmit, control, reset } = useForm<Votes>({
     defaultValues: defaultFormValues,

@@ -24,6 +24,7 @@ export const VoteSchema = z.object({
 export const DataSchema = z.object({
     agent: z.string(),
     votes: z.array(VoteSchema),
+    image: z.string(),
   });
 
 
