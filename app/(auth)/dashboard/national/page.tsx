@@ -29,7 +29,7 @@ return (
     <TopCards/>
 
      {/* Images of Candidates */}
-    <div className="flex w-full">
+    <div className="py-5 w-full ">
       <div className="m-3">
        <Tile/>
       </div>
