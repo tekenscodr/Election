@@ -16,6 +16,12 @@ export const RegisterSchema = z.object({
     .max(13, {message: 'Must be a valid mobile number'})
 }) 
 
+export const LoginSchema = z.object({
+  phoneNumber : z.string().nonempty('Phone Number is required'),
+  password: z.string().nonempty('password is required')
+
+})
+
 export const VoteSchema = z.object({
     name: z.string(),
     count: z.number(),

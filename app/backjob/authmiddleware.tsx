@@ -5,6 +5,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 
 interface AuthContextType {
   user: User | null;
+  error: string | null;
   loading: boolean;
   login: (username: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
@@ -30,6 +31,7 @@ const AuthContext = createContext<AuthContextType | null>(null);
 export const AuthProvider: React.FC<{ children: React.ReactNode }>= ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('')
   const router = useRouter();
 
   useEffect(() => {
@@ -83,13 +85,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }>= ({ children 
         console.log(user);
         router.push('/dashboard');
       } else {
-        console.error('Login failed');
+        setError(`Wrong Credentials`)
         }
-    } catch (error : unknown) {
-      if (error instanceof Error) {
-        throw new Error(error.message);
-      }
-      throw new Error('An unknown error occurred during login.');
+    } catch (error : any) {
+      setError(`Login Failed... Try Again `)
     }
   };
   const logout = async () => {
@@ -110,7 +109,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }>= ({ children 
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, logout, error }}>
       {children}
     </AuthContext.Provider>
   );
