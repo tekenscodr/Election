@@ -26,17 +26,16 @@ return (
   <>
    {!loading&& user&&(
   <div className='bg-white py-5 min-h-screen w-full'>
-    {/* <TopCards/> */}
+    <TopCards/>
 
      {/* Images of Candidates */}
     <div className="py-5 w-full ">
-      <div className="m-3">
+      <div className="flex m-3 items-center">
        <Tile/>
-       
       </div>
     </div>
 
-  {/* <div className='flex'>  
+  <div className='flex'>  
   <div className='m-5 w-1/2'>
     <h1 className='p-2 text-black text-lg text-justify font-bold'>Results</h1>
     <NationalCard />
@@ -45,7 +44,7 @@ return (
   <div className='m-5 w-1/2'>
     <Recent/>
   </div>
-  </div> */}
+  </div>
   </div>
    )}
    
