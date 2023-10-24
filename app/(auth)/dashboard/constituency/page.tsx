@@ -11,9 +11,9 @@ type Votes = z.infer<typeof DataSchema>;
 
 const Constituency = () => {
   const router = useRouter();
-  const { user, loading } = useAuth();
+  const { user, logout, loading } = useAuth();
   const userid = user?._id;
-
+  // const onlogout = logout();
   const defaultFormValues: Votes = {
     agent: userid!,
     votes: [
@@ -53,6 +53,7 @@ const Constituency = () => {
       if (response.ok) {
         reset();
         alert('Data submitted successfully');
+        logout();
       } else {
         alert('Data submission failed');
       }
