@@ -64,7 +64,7 @@ type Inputs = z.infer<typeof LoginSchema>
                   required:'Password is Required',
                   minLength: {
                     value: 6,
-                    message:"Password must be at least of length 6 characters."
+                    message: "Password must be at least of length 6 characters."
                   }
                   })}
                   className="w-full h-full border border-gray-400 rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500"
@@ -80,7 +80,7 @@ type Inputs = z.infer<typeof LoginSchema>
                   text-white font-bold py-2 px-4 rounded
                   disabled:bg-gray-500"
                   type="submit">
-                  Sign In
+                  {isSubmitting ? "Loading.." : "Login"}
                 </button> 
                 {/* <a className="inline-block align-baseline text-sm text-blue-500 hover:text-blue-800" href="#">
                   Forgot Password?
